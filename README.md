@@ -1,2 +1,0 @@
-# Ostad
-Weekly Assignments
