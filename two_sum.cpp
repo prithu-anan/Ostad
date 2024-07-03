@@ -15,16 +15,22 @@ vector<int> twoSum(vector<int>& nums, int target) {
             return ans;
         }
 
-        sum.insert({nums[i], i}); // Amortised O(n) time
+        sum.insert({nums[i], i}); // Amortised O(1) time
     }
 
     return ans;
 }
 
+/*
+Explanation:
+Iterates through the array to find a corresponding member to the current member using map to obtain the target value.
+The corresponding member to the current member is basically a member which has the value of the target minus the value of the current member.
+*/
+
 
 
 /*
-Using Binary Search
+Using Two Pointers
 Time Complexity: O(nlogn), due to using sort function
 Space Complexity: O(n), due to using an extra vpi to store indices
 */
@@ -52,3 +58,12 @@ vector<int> twoSum(vector<int>& nums, int target) {
     }
     return ans;
 }
+
+/*
+Explanation:
+Sorts the array
+Iterates the sorted array from both sides to obtain the target value.
+If the summation is less than the target, we can move the left pointer forward as it will increase the summation
+And if the summation is greater than the target, we can move the right pointer backward to decrease the summation
+This is all possible due the array being sorted.
+*/
